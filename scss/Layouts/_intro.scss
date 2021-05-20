@@ -1,0 +1,43 @@
+.intro {
+  background: linear-gradient(to right, $color-purple, $color-red-0);
+  .intro__content {
+    width: 80%;
+    margin: 0 auto;
+    .intro__item {
+      padding-top: $pd-2;
+      padding-bottom: $pd-2;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      .intro__item-icon {
+        i {
+          @include styleText($color-white-0, $fs-4, $fw-bold);
+        }
+      }
+      .intro__text {
+        margin-left: $pd-2;
+        .intro__text-top {
+          @include styleText($color-white-0, $fs-2 - 3, $fw-bold);
+        }
+        .intro__text-bot {
+          @include styleText($color-white-0, $fs-0, $fw-normal);
+        }
+      }
+    }
+  }
+}
+
+// responsive
+@include responsive("extra-large") {
+  .intro__item-icon {
+    i {
+      display: none;
+    }
+  }
+}
+
+@include responsive("medium") {
+  .intro {
+    display: none;
+  }
+}

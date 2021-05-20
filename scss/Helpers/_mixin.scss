@@ -1,0 +1,54 @@
+// them style cho cac thanh phan button, text hien thi tren trang web
+@mixin styleText($color, $fs, $fw) {
+  color: $color;
+  font-size: $fs;
+  font-weight: $fw;
+}
+
+@mixin styleButtonWhiteColor($bg-color, $color, $pd-y, $pd-x, $border-color) {
+  background-color: $bg-color;
+  color: $color;
+  padding: $pd-y $pd-x;
+  border: 1px solid $border-color;
+}
+
+@mixin styleButtonWhiteHover($color) {
+  color: $color;
+}
+
+@mixin styleButtonRed($color, $bg-color, $pd-y, $pd-x, $border-color) {
+  color: $color;
+  background-color: $bg-color;
+  padding: $pd-y $pd-x;
+  border: 1px solid $border-color;
+}
+
+@mixin styleButtonRedHover($bg-color, $color) {
+  background-color: $bg-color;
+  color: $color;
+}
+
+@mixin styleSearch($bg-color, $border-color) {
+  background-color: $bg-color;
+  border: $border-color;
+}
+
+// Responsive
+// $screen: chua ten man hinh ( Key )
+@mixin responsive($screen) {
+  // lay gia tri theo kich thuoc man hinh
+  // kiem tra gia tri ten man hinh co ton tai hay khong, co ton tai breakpoint khong?
+
+  @if (map-has-key($map: $breakpoints, $key: $screen)) {
+    //   xet tinh hop le
+    $value: map-get(
+      $map: $breakpoints,
+      $key: $screen,
+    );
+    @media screen and (max-width: $value) {
+      @content;
+    }
+  } @else {
+    @warn "Man hinh khong hop le";
+  }
+}

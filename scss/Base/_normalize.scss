@@ -1,0 +1,46 @@
+.owl-prev {
+  position: absolute;
+  top: 30%;
+  left: 0;
+  transform: translate(-50%, 50%);
+  width: 45px;
+  height: 45px;
+  border-radius: 50% !important;
+  background-color: $color-white-0 !important;
+  box-shadow: 0 0 1px 1px rgba(20, 23, 28, 0.8 / 10%),
+    0 3px 1px 0 rgba(20, 23, 28, 0.8 / 10%);
+  border-color: $color-white-0;
+  z-index: 3;
+  span {
+    @include styleText($color-blue, $fs-4, $fw-bold);
+    line-height: 0.5;
+  }
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    box-shadow: 0 2px 8px 2px rgba(20, 23, 28, 1 / 50%);
+  }
+}
+
+.owl-next {
+  position: absolute;
+  top: 30%;
+  right: 0;
+  transform: translate(50%, 50%);
+  width: 45px;
+  height: 45px;
+  border-radius: 50% !important;
+  background-color: $color-white-0 !important;
+  box-shadow: 0 0 1px 1px rgba(20, 23, 28, 0.8 / 10%),
+    0 3px 1px 0 rgba(20, 23, 28, 0.8 / 10%);
+  border-color: $color-white-0;
+  z-index: 3;
+  span {
+    @include styleText($color-blue, $fs-4, $fw-bold);
+    line-height: 0.5;
+  }
+  &:focus {
+    outline: none;
+  }
+}

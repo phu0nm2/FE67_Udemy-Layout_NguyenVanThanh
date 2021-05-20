@@ -1,0 +1,46 @@
+.cover {
+  background-image: url("./../../img/cover.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 500px;
+  position: relative;
+  .cover__content {
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    h1 {
+      @include styleText($color-white-0, $fs-4, $fw-bold);
+    }
+    p {
+      margin-bottom: $mg-1;
+      width: 65%;
+      @include styleText($color-white-0, $fs-2 - 2, $fw-normal);
+    }
+    .header__cover {
+      width: 70%;
+      .form-control {
+        border: none;
+        padding: $pd-2 + 4;
+        font-size: $fs-2;
+        &:focus {
+          box-shadow: none;
+        }
+      }
+      .input-group-prepend {
+        .input-group-text {
+          border: none;
+          padding: $pd-1 + 5;
+          background-color: $color-white-0;
+          color: $color-red-0;
+        }
+        &:hover {
+          .input-group-text {
+            background-color: $color-red-0;
+            color: $color-white-0;
+          }
+        }
+      }
+    }
+  }
+}

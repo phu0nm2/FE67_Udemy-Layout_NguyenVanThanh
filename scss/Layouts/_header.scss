@@ -1,0 +1,135 @@
+// Header
+.header_left {
+  display: flex;
+  align-items: center;
+  .navbar-brand {
+    img {
+      width: 110px;
+    }
+  }
+  .header_search {
+    flex-grow: 1;
+    .form-control,
+    .input-group-text {
+      @include styleSearch($color-white-cream, $color-white-cream);
+      &:focus {
+        box-shadow: none;
+        background-color: $color-white-0;
+        border-top: 1px solid $color-gray-3;
+        border-bottom: 1px solid $color-gray-3;
+        border-left: 1px solid $color-gray-3;
+      }
+      &:focus + .input-group-prepend {
+        .input-group-text {
+          background-color: $color-white-0;
+          border-bottom: 1px solid $color-gray-3;
+          border-top: 1px solid $color-gray-3;
+          border-right: 1px solid $color-gray-3;
+        }
+        &:hover {
+          .input-group-text {
+            color: $color-white-0;
+            background-color: $color-red-0;
+          }
+        }
+      }
+    }
+    .input-group-prepend {
+      .input-group-text {
+        color: $color-red-0;
+        border: none;
+      }
+      &:hover {
+        .input-group-text {
+          color: $color-white-0;
+          background-color: $color-red-0;
+        }
+      }
+    }
+  }
+}
+
+.header_right {
+  .navbar-nav {
+    justify-content: space-between;
+    .nav-item {
+      align-self: center; // canh chinh chieu doc
+      .nav-link {
+        @include styleText($color-gray-4, $fs-1, $fw-normal);
+      }
+      &:hover {
+        background-color: $color-white-cream;
+      }
+    }
+    .nav-item:nth-child(3) {
+      border-radius: 50%;
+    }
+  }
+  .btnGroup {
+    button {
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+// Responsive
+// 1200px
+@include responsive("extra-large") {
+  .header_right {
+    .ude-business,
+    .ude-teach {
+      display: none;
+    }
+  }
+}
+
+// 992px
+@include responsive("large") {
+  .header_right {
+    .btnGroup {
+      white-space: nowrap;
+    }
+  }
+}
+
+// 768px
+@include responsive("medium") {
+  .header_right {
+    .btnGroup {
+      display: none;
+    }
+  }
+  .header_left {
+    justify-content: center;
+    .header_cate,
+    .header_search {
+      display: none;
+      flex-grow: 1;
+    }
+    &:hover {
+      .header_cate {
+        background-color: $color-white-cream;
+      }
+    }
+  }
+}
+
+// 576px
+@include responsive("small") {
+  .header_right .col-5 {
+    max-width: 27%;
+  }
+  .header_right {
+    .btnGroup {
+      display: none;
+    }
+  }
+  .header_left {
+    .header_cate,
+    .header_search {
+      display: none;
+    }
+  }
+}

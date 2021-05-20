@@ -1,0 +1,28 @@
+.feedback {
+  background: $color-gray-5;
+  height: auto;
+  .feedback__content {
+    padding-top: $pd-2 + $pd-2;
+    h3 {
+      @include styleText($color-black-0, $fs-3, $fw-bold);
+    }
+    .feedback__items {
+      .card-item {
+        padding: $pd-2;
+        .card-title {
+          display: flex;
+          align-items: center;
+          img {
+            width: 75px;
+            height: 70px;
+            border-radius: 50%;
+            margin-right: $pd-1;
+          }
+        }
+        &:nth-child(2) {
+          @include styleText($color-black-0, $fs-1 + 2, $fw-bold);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,98 @@
+.footer {
+  padding-top: $pd-2 + $pd-2;
+  .footer__content-top {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: $pd-2 + $pd-2;
+    border-bottom: 1px solid $color-gray-6;
+    ul {
+      list-style: none;
+      .styleFooterColorBlue {
+        @include styleText($color-blue, $fs-0, $fw-bold);
+        &:hover {
+          @include styleText($color-black-0, $fs-0, $fw-bold);
+        }
+      }
+      a {
+        @include styleText($color-blue, $fs-0 - 1, $fw-normal);
+        text-decoration: none;
+        margin-left: $mg-2;
+        &:hover {
+          color: #003845;
+        }
+      }
+    }
+    @include responsive("small") {
+      ul {
+        display: none;
+      }
+    }
+  }
+  .footer__content-bot {
+    border-bottom: 6px solid $color-red-0;
+
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .footer__bot-left {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      img {
+        width: 150px;
+        padding-right: $pd-2;
+        padding-left: $pd-2;
+      }
+      span {
+        @include styleText($color-gray-2, $fs-0, $fw-normal);
+      }
+    }
+    @include responsive("small") {
+      .footer__bot-left {
+        flex-direction: column;
+      }
+    }
+
+    .footer__bot-right {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .styleFooterRightHover {
+        span {
+          @include styleText($color-gray-2, $fs-0 - 2, $fw-normal);
+          color: #007791;
+          &:hover {
+            color: #003845;
+          }
+        }
+      }
+      .style-Footer-Right-Hover {
+        padding-left: $pd-2;
+        span {
+          @include styleText($color-gray-2, $fs-0 - 2, $fw-normal);
+          color: #007791;
+          &:hover {
+            color: #003845;
+          }
+        }
+      }
+    }
+  }
+  @include responsive("small") {
+    .footer__content-top {
+      justify-content: start;
+    }
+    .footer__content-bot {
+      flex-direction: column;
+      align-items: baseline;
+      img {
+        margin-right: $mg-2 + $mg-2 + $mg-2 + $mg-1;
+      }
+    }
+    .footer__bot-right {
+      padding-bottom: $pd-1;
+      margin-left: $mg-2;
+    }
+  }
+}

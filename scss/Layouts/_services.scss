@@ -1,0 +1,53 @@
+.services {
+  background: $color-white-cream;
+  height: 200px;
+  .services__content {
+    display: flex;
+    .services__item {
+      display: flex;
+      height: 120px;
+      background: $color-white-0;
+      margin-top: $mg-2 + $mg-2;
+      padding: $pd-1;
+      border: 1px solid $color-gray-3;
+      .services__icon {
+        position: relative;
+        margin-right: 10px;
+        @include styleText($color-black-light, $fs-4, $fw-bold);
+      }
+      .overlay {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background: #77c5d6;
+        position: absolute;
+        top: 34%;
+        left: 0;
+        transform: translate(50%, 50%);
+      }
+      .services__text {
+        width: 70%;
+        padding-top: $pd-1;
+        h5 {
+          @include styleText($color-black-0, $fs-2 - 2, $fw-bold);
+        }
+        p {
+          @include styleText($color-black-0, $fs-1 + 1, $fw-normal);
+        }
+      }
+    }
+  }
+}
+
+//responsive
+
+@include responsive("medium") {
+  .services {
+    .owl-prev {
+      display: none !important;
+    }
+  }
+  .owl-next {
+    display: none !important;
+  }
+}

@@ -1,0 +1,56 @@
+.banner {
+  background: $color-black-0;
+  margin-bottom: $mg-2;
+  .banner__border-top {
+    background: linear-gradient(to right, $color-purple, $color-red-0);
+    height: 8px;
+  }
+  .banner__content {
+    height: 350px;
+    .banner__icon-top {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-top: $pd-2 + $pd-2;
+    }
+    .banner__info {
+      display: flex;
+      flex-direction: row;
+      margin: 0 auto;
+      justify-content: space-around;
+      align-items: center;
+      text-align: center;
+      padding-top: $pd-2;
+      .banner__info-mid {
+        h1 {
+          @include styleText($color-white-0, $fs-3, $fw-bold);
+        }
+        p {
+          @include styleText($color-white-0, $fs-1, $fw-normal);
+          padding-top: $pd-1;
+          padding-bottom: $pd-2;
+        }
+        .btnGroup {
+          .ude-btnRed {
+            outline: none;
+          }
+        }
+      }
+    }
+    .banner__icon-bot {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-top: $pd-2 + $pd-2;
+    }
+  }
+}
+
+@include responsive("medium") {
+  img {
+    display: none;
+  }
+  .banner__info-mid {
+    padding-top: $pd-2 + $pd-2;
+  }
+}

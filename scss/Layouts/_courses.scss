@@ -1,0 +1,121 @@
+.courses {
+  margin-top: $mg-2;
+  .courses__content {
+    width: 80%;
+    margin: auto;
+    .courses__left {
+      margin: auto;
+
+      .courses__text {
+        h1 {
+          @include styleText($color-black-0, $fs-2 - 2, $fw-bold-1);
+        }
+        p {
+          @include styleText($color-black-0, $fs-0 + 1, $fw-normal);
+        }
+      }
+    }
+    .courses__right {
+      padding-bottom: $pd-2;
+      .nav {
+        justify-content: space-around;
+        border-bottom: 1px solid $color-gray-3;
+        flex-wrap: nowrap;
+
+        // đặt hover ở trên .nav-link.active tránh mất kẻ border-bottom
+        &:hover {
+          color: $color-blue;
+          .nav-link {
+            border: none;
+          }
+        }
+        .nav-link.active {
+          border: none;
+          color: $color-black-0;
+          border-bottom: 6px solid $color-blue;
+        }
+        .nav-link {
+          @include styleText($color-black-0, $fs-0, $fw-normal);
+          border: none;
+        }
+      }
+
+      .tab-content {
+        margin-top: $mg-1;
+        position: relative;
+        .tab-card-items {
+          .owl-item {
+            width: 145px !important;
+            .owl-nav {
+              display: block;
+            }
+            .card-title {
+              @include styleText($color-black-0, $fs-1 + 2, $fw-bold);
+            }
+            .card-text {
+              @include styleText($color-black-light, $fs-1, $fw-normal);
+            }
+          }
+        }
+      }
+      .tab-content {
+        .card-start {
+          display: flex;
+          .fa,
+          .fas {
+            @include styleText($color-yellow, $fs-1 - 2, $fw-bold);
+          }
+        }
+        .card-rate {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          span:nth-child(2) {
+            @include styleText($color-black-0, $fs-1, $fw-bold);
+          }
+          span:last-child {
+            @include styleText($color-black-0, $fs-1, $fw-normal);
+          }
+        }
+      }
+      .tab-content {
+        .card {
+          height: 320px;
+
+          .card-sell {
+            text-align: right;
+            span:nth-child(1) {
+              @include styleText($color-black-0, $fs-1, $fw-bold);
+              text-decoration: line-through;
+            }
+            span:last-child {
+              @include styleText($color-black-0, $fs-2, $fw-bold);
+            }
+          }
+        }
+      }
+      .tab-content {
+        .card-item {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+// responsive
+// 768px
+@include responsive("medium") {
+  .courses__left {
+    display: none;
+  }
+}
+
+// 576px
+@include responsive("small") {
+  .courses__text {
+    p {
+      font-size: $fs-1 - 2;
+    }
+  }
+}

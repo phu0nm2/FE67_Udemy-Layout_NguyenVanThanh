@@ -1,0 +1,39 @@
+.Categories {
+  padding-bottom: $pd-2 + $pd-2;
+  .Categories__content {
+    .Categories__title {
+      padding-bottom: $pd-1;
+      h3 {
+        @include styleText($color-black-0, $fs-3, $fw-bold);
+      }
+    }
+    .Categories__items {
+      .row {
+        grid-row-gap: 10px;
+        grid-column-gap: 20px;
+
+        .Categories__item {
+          display: flex;
+          max-width: 23%;
+          align-items: center;
+          padding: $pd-1;
+          border: 1px solid $color-gray-3;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+          .icon {
+            padding-right: $pd-1;
+          }
+          .text {
+            p {
+              @include styleText($color-black-0, $fs-1, $fw-normal);
+            }
+          }
+          &:hover {
+            box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+              rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+          }
+        }
+      }
+    }
+  }
+}

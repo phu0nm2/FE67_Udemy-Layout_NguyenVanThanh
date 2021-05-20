@@ -1,0 +1,66 @@
+.students {
+  padding-bottom: $pd-2 + $pd-2;
+  .students__content {
+    // margin-top: $mg-1;
+    .students__title {
+      padding-top: $pd-2;
+    }
+    .students_courses {
+      .owl-nav {
+        display: block;
+      }
+    }
+
+    .card-start {
+      display: flex;
+      .fa,
+      .fas {
+        @include styleText($color-yellow, $fs-1 - 2, $fw-bold);
+      }
+    }
+    .card-rate {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      span:nth-child(2) {
+        @include styleText($color-black-0, $fs-1, $fw-bold);
+      }
+      span:last-child {
+        @include styleText($color-black-0, $fs-1, $fw-normal);
+      }
+    }
+
+    .card-sell {
+      text-align: right;
+      span:nth-child(1) {
+        @include styleText($color-black-0, $fs-1, $fw-bold);
+        text-decoration: line-through;
+      }
+      span:last-child {
+        @include styleText($color-black-0, $fs-2, $fw-bold);
+      }
+    }
+    .card {
+      height: 320px;
+    }
+    .students_courses {
+      .card-item {
+        cursor: pointer;
+        h5 {
+          @include styleText($color-black-0, $fs-0, $fw-bold-1);
+        }
+        p {
+          @include styleText($color-black-0, $fs-0, $fw-normal);
+        }
+      }
+    }
+  }
+}
+
+//responsive
+
+@include responsive("large") {
+  .owl-prev {
+    // display: none;
+  }
+}
